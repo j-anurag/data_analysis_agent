@@ -1,0 +1,13 @@
+node_modules/
+.env
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+.idea/
+.vscode/
+.next/
+frontend/.next/
+frontend/out/
+dist/
+build/
