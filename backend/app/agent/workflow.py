@@ -12,7 +12,7 @@ from backend.app.tools.visualization_tool import configure_chart
 from backend.app.tools.dashboard_tool import generate_dashboard
 from backend.app.tools.report_tool import generate_report
 
-logger = logging.getLogger("insightflow.agent")
+logger = logging.getLogger("data_analysis_agent.agent")
 
 # Initialize Groq client
 api_key = os.getenv("GROQ_API_KEY")
@@ -36,7 +36,7 @@ class AgentState(TypedDict):
     file_content: Optional[str]
     file_name: Optional[str]
 
-class InsightFlowAgent:
+class DataAnalysisAgent:
     def __init__(self):
         pass
 
@@ -365,7 +365,7 @@ Rules:
         else:
             anomalies_summary = "No anomalies detected."
  
-        system_prompt = """You are InsightFlow AI, a state-of-the-art enterprise AI Data Analyst.
+        system_prompt = """You are data_analysis_agent, a state-of-the-art enterprise AI Data Analyst.
 Your goal is to explain database query results, trends, and anomalies to business stakeholders.
  
 Rules:
@@ -410,7 +410,7 @@ Write the analytics explanation:"""
         """Asks the LLM to write a helpful guidance message when a query is off-track or fails."""
         errors_text = "; ".join(state["errors"]) if state["errors"] else "Query does not match standard database fields."
         
-        system_prompt = """You are InsightFlow AI, a state-of-the-art enterprise AI Data Analyst.
+        system_prompt = """You are data_analysis_agent, a state-of-the-art enterprise AI Data Analyst.
 The user asked a query that could not be mapped to a valid database SQL query, was off-topic, conversational, or resulted in an error.
 Your goal is to guide the user back on track.
 
@@ -453,7 +453,7 @@ Write the guidance response:"""
 
     def _synthesize_metadata_response(self, state: AgentState):
         """Synthesizes a response for questions about database tables, schemas, or system features."""
-        system_prompt = f"""You are InsightFlow AI, a state-of-the-art enterprise AI Data Analyst.
+        system_prompt = f"""You are data_analysis_agent, a state-of-the-art enterprise AI Data Analyst.
 The user is asking a question about the databases, database schema, tables, columns, datasources, or how features work (like saving dashboards or exporting reports).
 Your goal is to answer their question comprehensively and professionally.
 
@@ -519,7 +519,7 @@ Keep it extremely concise, clear, and business-focused to save tokens. No pleasa
 
     def _synthesize_file_response(self, state: AgentState):
         """Asks the LLM to analyze the uploaded file content and answer the user query."""
-        system_prompt = """You are InsightFlow AI, a state-of-the-art enterprise AI Data Analyst.
+        system_prompt = """You are data_analysis_agent, a state-of-the-art enterprise AI Data Analyst.
 Your goal is to perform a deep, highly detailed, and comprehensive analysis of the uploaded file.
 
 Rules:

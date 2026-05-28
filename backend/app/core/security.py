@@ -4,7 +4,7 @@ from typing import Optional
 import jwt
 import bcrypt
 
-SECRET_KEY = os.getenv("JWT_SECRET", "insightflow-ai-super-secret-key-2026")
+SECRET_KEY = os.getenv("JWT_SECRET", "data-analysis-agent-super-secret-key-2026")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 240 # 4 hours
 

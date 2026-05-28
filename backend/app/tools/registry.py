@@ -2,7 +2,7 @@ import inspect
 import logging
 from typing import Callable, Dict, Any, List
 
-logger = logging.getLogger("insightflow.tools")
+logger = logging.getLogger("data_analysis_agent.tools")
 
 class ToolRegistry:
     def __init__(self):

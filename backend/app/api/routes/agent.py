@@ -6,7 +6,7 @@ import tempfile
 from markitdown import MarkItDown
 from backend.app.db.session import get_db
 from backend.app.api.schemas.schemas import QueryRequest, QueryResponse
-from backend.app.agent.workflow import InsightFlowAgent
+from backend.app.agent.workflow import DataAnalysisAgent
 from backend.app.api.routes.auth import get_current_user
 from backend.app.models.models import User
 
@@ -23,7 +23,7 @@ def run_agent_query(
     The agent dynamically generates SQL, runs it, checks for anomalies, 
     configures visualization, and synthesizes a textual explanation.
     """
-    agent = InsightFlowAgent()
+    agent = DataAnalysisAgent()
     agent_result = agent.run(
         query=payload.query, 
         chat_history=payload.chat_history, 
@@ -109,7 +109,7 @@ async def run_agent_file_query(
             os.remove(temp_file_path)
 
     # Process using the agent
-    agent = InsightFlowAgent()
+    agent = DataAnalysisAgent()
     agent_result = agent.run(
         query=query if query.strip() else f"Analyze the uploaded file {file.filename}",
         chat_history=chat_history_list,

@@ -2,7 +2,7 @@ import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import declarative_base, sessionmaker
 
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./insightflow.db")
+DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./data_analysis_agent.db")
 
 # check_same_thread=False is needed only for SQLite
 connect_args = {"check_same_thread": False} if DATABASE_URL.startswith("sqlite") else {}

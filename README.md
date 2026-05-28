@@ -1,7 +1,7 @@
-# InsightFlow AI - AI Data Analyst Agent
+# data_analysis_agent - AI Data Analyst Agent
 
 ## Description
-**InsightFlow AI** is a state-of-the-art enterprise AI Data Analyst agent. It enables business users to query databases and uploaded files using natural language, automatically generating optimized read-only SQL queries for database analysis.
+**data_analysis_agent** is a state-of-the-art enterprise AI Data Analyst agent. It enables business users to query databases and uploaded files using natural language, automatically generating optimized read-only SQL queries for database analysis.
 
 This repository is organized as a monorepo containing a high-performance **FastAPI backend** (orchestrating the agent workflow using LangGraph and Groq LLM clients) and a modern **Next.js frontend portal** styled with custom Tailwind CSS.
 
@@ -40,7 +40,7 @@ data_analyst_agent/           # Root directory
 ├─ docs/                      # Documentation assets
 │  ├─ images/
 │  │  ├─ architecture.png     # Architecture Diagram
-├─ insightflow.db             # Seeded SQLite Demo Database
+├─ data_analysis_agent.db     # Seeded SQLite Demo Database
 ├─ Makefile                   # Automation commands for dependencies & running
 ├─ .env                       # Environment variables
 └─ README.md                  # Project official documentation
@@ -63,7 +63,7 @@ Create a `.env` file in the root directory (already configured with a fallback i
 GROQ_API_KEY=your_groq_api_key
 MODEL_NAME=openai/gpt-oss-120b
 TEMPERATURE=0.7
-DATABASE_URL=sqlite:///./insightflow.db
+DATABASE_URL=sqlite:///./data_analysis_agent.db
 ```
 
 ---

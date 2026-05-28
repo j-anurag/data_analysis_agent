@@ -108,7 +108,7 @@ export default function WorkspacePage() {
 
       // Restore active workspace session from localStorage
       try {
-        const stored = localStorage.getItem("insightflow_session");
+        const stored = localStorage.getItem("data_analysis_agent_session");
         if (stored) {
           const session = JSON.parse(stored);
           if (session.chatHistory) setChatHistory(session.chatHistory);
@@ -129,7 +129,7 @@ export default function WorkspacePage() {
       setActiveChart(null);
       setActiveAnomalies(null);
       setActiveReport(null);
-      localStorage.removeItem("insightflow_session");
+      localStorage.removeItem("data_analysis_agent_session");
     }
   }, [token]);
 
@@ -144,7 +144,7 @@ export default function WorkspacePage() {
       activeAnomalies,
       activeReport
     };
-    localStorage.setItem("insightflow_session", JSON.stringify(session));
+    localStorage.setItem("data_analysis_agent_session", JSON.stringify(session));
   }, [chatHistory, activeSql, activeData, activeChart, activeAnomalies, activeReport, token]);
 
   useEffect(() => {
@@ -463,7 +463,7 @@ export default function WorkspacePage() {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen bg-[#030712]">
         <div className="w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-        <p className="mt-4 text-slate-400 text-sm animate-pulse">Loading InsightFlow workspace...</p>
+        <p className="mt-4 text-slate-400 text-sm animate-pulse">Loading data_analysis_agent workspace...</p>
       </div>
     );
   }
@@ -483,7 +483,7 @@ export default function WorkspacePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-white">InsightFlow AI</h1>
+            <h1 className="text-2xl font-bold tracking-tight text-white">data_analysis_agent</h1>
             <p className="text-slate-400 text-xs text-center mt-1">MCP-Based AI Data Analyst Platform</p>
           </div>
 
@@ -640,7 +640,7 @@ export default function WorkspacePage() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
           </div>
-          <span className="font-bold tracking-tight text-white text-sm">InsightFlow AI</span>
+          <span className="font-bold tracking-tight text-white text-sm">data_analysis_agent</span>
         </div>
 
         {/* Tab Selection */}

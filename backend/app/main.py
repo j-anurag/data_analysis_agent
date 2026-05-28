@@ -28,7 +28,7 @@ try:
 except Exception as e:
     print(f"Error initializing database: {e}")
 
-app = FastAPI(title="InsightFlow AI API Gateway", version="0.1.0")
+app = FastAPI(title="data_analysis_agent API Gateway", version="0.1.0")
 
 # CORS setup
 app.add_middleware(

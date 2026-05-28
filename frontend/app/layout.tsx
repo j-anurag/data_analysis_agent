@@ -6,7 +6,7 @@ import { AuthProvider } from '@/components/auth-provider';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'InsightFlow AI',
+  title: 'data_analysis_agent',
   description: 'AI‑powered data analyst platform',
 };
 

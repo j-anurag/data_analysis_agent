@@ -26,19 +26,19 @@ def seed_database():
         users = [
             User(
                 username="admin",
-                email="admin@insightflow.ai",
+                email="admin@data-analysis-agent.ai",
                 hashed_password=get_password_hash("admin123"),
                 role="admin"
             ),
             User(
                 username="analyst",
-                email="analyst@insightflow.ai",
+                email="analyst@data-analysis-agent.ai",
                 hashed_password=get_password_hash("analyst123"),
                 role="analyst"
             ),
             User(
                 username="demouser",
-                email="demo@insightflow.ai",
+                email="demo@data-analysis-agent.ai",
                 hashed_password=get_password_hash("demo123"),
                 role="viewer"
             )
@@ -59,7 +59,7 @@ def seed_database():
             Product(name="Titanium Water Bottle", category="Accessories", price=39.99, cost=12.00, stock=500),
             Product(name="Leather Travel Duffle Bag", category="Accessories", price=189.99, cost=80.00, stock=90),
             Product(name="Python Data Analytics Course", category="Software", price=99.00, cost=0.00, stock=9999),
-            Product(name="InsightFlow Pro License (Annual)", category="Software", price=499.00, cost=0.00, stock=9999),
+            Product(name="data_analysis_agent Pro License (Annual)", category="Software", price=499.00, cost=0.00, stock=9999),
             Product(name="UltraFit Running Shoes", category="Apparel", price=129.99, cost=55.00, stock=110),
             Product(name="Merino Wool Sweater", category="Apparel", price=79.99, cost=30.00, stock=140),
         ]

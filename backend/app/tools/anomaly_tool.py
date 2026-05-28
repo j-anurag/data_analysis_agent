@@ -4,7 +4,7 @@ import numpy as np
 from typing import List, Dict, Any
 from backend.app.tools.registry import registry
 
-logger = logging.getLogger("insightflow.tools.anomaly")
+logger = logging.getLogger("data_analysis_agent.tools.anomaly")
 
 @registry.register(
     name="detect_anomalies",
